@@ -1,4 +1,5 @@
-package algonquin.cst2355.finalproject;public class Definition {
+package algonquin.cst2355.finalproject;
+
 
 
     public class Definition {
@@ -8,4 +9,3 @@ package algonquin.cst2355.finalproject;public class Definition {
             this.definition = definition;
         }
     }
-}

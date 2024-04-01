@@ -1,7 +1,6 @@
 package algonquin.cst2355.finalproject;
 
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +32,6 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2355.dictionary.R;
 
 public class Dictionary extends AppCompatActivity {
     EditText etSearchTerm;
@@ -46,7 +44,7 @@ public class Dictionary extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dictionary);
 
         etSearchTerm = findViewById(R.id.etSearchTerm);
         btnSearch = findViewById(R.id.btnSearch);
@@ -70,7 +68,7 @@ public class Dictionary extends AppCompatActivity {
         btnViewSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewSavedSearchesActivity.class);
+                Intent intent = new Intent(Dictionary.this, ViewSavedSearchesActivity.class);
                 startActivity(intent);
             }
         });
@@ -78,7 +76,7 @@ public class Dictionary extends AppCompatActivity {
         btnViewSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewSavedSearchesActivity.class);
+                Intent intent = new Intent(Dictionary.this, ViewSavedSearchesActivity.class);
                 startActivity(intent);
             }
         });
@@ -118,13 +116,13 @@ public class Dictionary extends AppCompatActivity {
                             });
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(MainActivity.this, "Error parsing the definitions", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Dictionary.this, "Error parsing the definitions", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "Error fetching the definitions", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dictionary.this, "Error fetching the definitions", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -143,5 +141,4 @@ public class Dictionary extends AppCompatActivity {
     }
 
 
-    // Implement methods to handle fetching and displaying definitions
 }

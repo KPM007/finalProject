@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import algonquin.cst2355.dictionary.R;
 
 public class DefinitionsAdapter extends RecyclerView.Adapter<DefinitionsAdapter.DefinitionViewHolder> {
     private List<Definition> definitions;
@@ -48,5 +47,4 @@ public class DefinitionsAdapter extends RecyclerView.Adapter<DefinitionsAdapter.
         }
     }
 }
-
 
