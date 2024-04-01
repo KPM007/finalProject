@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Sunrise">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -11,11 +11,11 @@
         android:layout_alignParentTop="true"
         android:background="?attr/colorPrimary" />
 
-
     <EditText
         android:id="@+id/editTextLat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:layout_margin="16dp"
         android:hint="Enter Latitude"
         android:inputType="numberDecimal" />
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextLat"
         android:layout_margin="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="91dp"
         android:layout_marginBottom="16dp"
         android:hint="Enter Longitude"
         android:inputType="numberDecimal" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextLng"
         android:layout_margin="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="83dp"
         android:layout_marginBottom="16dp"
         android:text="Lookup" />
 
