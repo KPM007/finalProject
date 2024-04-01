@@ -27,6 +27,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+dependencies {
+    // Other dependencies
+
+    // Add this line for Volley
+    implementation ("com.android.volley:volley:1.2.1")
+}
 
 dependencies {
 
