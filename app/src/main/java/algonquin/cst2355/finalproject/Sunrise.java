@@ -44,7 +44,7 @@ public class Sunrise extends AppCompatActivity {
 
     private SQLiteDatabase database;
     private FavoritesAdapter favoritesAdapter;
-    private String lastSunriseTime;
+
 
 
     @Override
@@ -80,7 +80,7 @@ public class Sunrise extends AppCompatActivity {
 
     private void setupDatabase() {
         database = openOrCreateDatabase("FavoritesDB", Context.MODE_PRIVATE, null);
-        database.execSQL("CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY AUTOINCREMENT, lat TEXT, lng TEXT,sunrise TEXT)");
+        database.execSQL("CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY AUTOINCREMENT, lat TEXT, lng TEXT)");
     }
 
     private void setupRecyclerView() {
@@ -93,7 +93,6 @@ public class Sunrise extends AppCompatActivity {
     }
 
     private void lookupSunriseSunset() {
-
         String lat = editTextLat.getText().toString();
         String lng = editTextLng.getText().toString();
 
@@ -104,7 +103,6 @@ public class Sunrise extends AppCompatActivity {
                     try {
                         JSONObject results = response.getJSONObject("results");
                         String sunrise = results.getString("sunrise");
-                        lastSunriseTime = sunrise;
                         String sunset = results.getString("sunset");
 
                         String resultText = "Sunrise: " + sunrise + "\nSunset: " + sunset;
@@ -123,7 +121,6 @@ public class Sunrise extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
-
     }
 
     private void saveLocationToFavorites() {
@@ -133,11 +130,9 @@ public class Sunrise extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put("lat", lat);
         values.put("lng", lng);
-        values.put("sunrise", lastSunriseTime); // Save the sunrise time
 
         database.insert("favorites", null, values);
         favoritesAdapter.swapCursor(database.rawQuery("SELECT * FROM favorites", null));
-        Toast.makeText(this, "Location saved", Toast.LENGTH_SHORT).show();
     }
 
     private void viewFavorites() {
@@ -189,8 +184,7 @@ public class Sunrise extends AppCompatActivity {
             if (cursor.moveToPosition(position)) {
                 String lat = cursor.getString(cursor.getColumnIndex("lat"));
                 String lng = cursor.getString(cursor.getColumnIndex("lng"));
-                String sunrise = cursor.getString(cursor.getColumnIndex("sunrise"));
-                holder.textView.setText(lat + ", " + lng + " - Sunrise: " + sunrise);
+                holder.textView.setText(lat + ", " + lng);
 
                 holder.itemView.setOnClickListener(v -> {
                     Context context = v.getContext();
