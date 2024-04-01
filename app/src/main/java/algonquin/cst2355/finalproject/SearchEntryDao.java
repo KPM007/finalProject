@@ -1,10 +1,5 @@
 package algonquin.cst2355.finalproject;
 
-import androidx.lifecycle.LiveData;
-
-import java.util.List;
-
-public class SearchEntryDao {
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -14,23 +9,20 @@ import androidx.room.Query;
 
 import java.util.List;
 
-    @Dao
-    public interface SearchEntryDao {
-        @Query("SELECT * FROM search_entries")
-        LiveData<List<SearchEntry>> getAll();
+@Dao
+public interface SearchEntryDao {
+    @Query("SELECT * FROM search_entries")
+    LiveData<List<SearchEntry>> getAll();
 
-        @Insert
-        void insert(SearchEntry searchEntry);
+    @Insert
+    void insert(SearchEntry searchEntry);
 
-        @Delete
-        void delete(SearchEntry searchEntry);
-        @Query("SELECT * FROM search_entries")
-        List<SearchEntry> getAllSync();
+    @Delete
+    void delete(SearchEntry searchEntry);
+    @Query("SELECT * FROM search_entries")
+    List<SearchEntry> getAllSync();
 
-        @Query("DELETE  FROM search_entries")
-        void deleteAll();
-    }
-
-
-
+    @Query("DELETE  FROM search_entries")
+    void deleteAll();
 }
+
