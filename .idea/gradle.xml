@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+
+
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+    git checkout DeezerSongSearch b44e47af969b23887ea16d6c030e8db12069d7dc
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
