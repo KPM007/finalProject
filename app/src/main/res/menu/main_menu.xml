@@ -8,5 +8,9 @@
         android:title="DeezerSongSearch"
         android:icon="@drawable/ic_more_apps"
         android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_more_apps3"
+        android:title="Dictionary"
+        android:showAsAction="ifRoom"/>
     <!-- Add any additional items here -->
 </menu>
