@@ -18,7 +18,18 @@
 
         <!-- MainActivity as the launcher activity -->
         <activity
+
+
+            android:name=".Dictionary"
+
+            android:name=".DeezerSongSearch"
+            android:exported="false" />
+        <activity
+            android:name=".DeezerSongSearch"
+
+
             android:name=".MainActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
