@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Help menu item -->
+    <item
+        android:id="@+id/help"
+        android:title="@string/help"
+
+        android:showAsAction="ifRoom|withText" />
+
+    <!-- You can add more menu items here -->
+</menu>
