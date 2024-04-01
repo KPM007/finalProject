@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_more_apps"
-        android:title="More Apps"
+        android:title="sunrise application"
         android:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/action_more_apps"
-        android:title="More Apps"
+    <item android:id="@+id/action_more_apps2"
+        android:title="DeezerSongSearch"
         android:icon="@drawable/ic_more_apps"
         android:showAsAction="ifRoom"/>
     <!-- Add any additional items here -->

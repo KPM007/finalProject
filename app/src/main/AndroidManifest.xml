@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
+        <activity android:name=".SongDetailsActivity"/>
 
+        <!-- MainActivity as the launcher activity -->
         <activity
+
 
             android:name=".Dictionary"
 
@@ -24,6 +27,9 @@
         <activity
             android:name=".DeezerSongSearch"
 
+
+            android:name=".MainActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +37,9 @@
             </intent-filter>
         </activity>
 
-        <!-- Other activities declaration -->
+        <!-- Other activities without the MAIN action and LAUNCHER category -->
+        <activity android:name=".DeezerSongSearch" android:exported="true"/>
+
         <activity android:name=".Sunrise" android:exported="true"/>
     </application>
 
