@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sunrise">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary" />
+
+    <EditText
+        android:id="@+id/editTextLat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="16dp"
+        android:hint="Enter Latitude"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextLng"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextLat"
+        android:layout_margin="16dp"
+        android:layout_marginTop="91dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Enter Longitude"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnLookup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextLng"
+        android:layout_margin="16dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginBottom="16dp"
+        android:text="Lookup" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@id/btnLookup"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Location"
+        android:layout_below="@id/tvResult"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btnViewFavorites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Favorites"
+        android:layout_below="@id/btnSave"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Favorites"
+        android:layout_below="@id/btnSave"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFavorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewFavorites"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
