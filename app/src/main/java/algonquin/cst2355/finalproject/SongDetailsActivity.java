@@ -31,7 +31,6 @@ public class SongDetailsActivity extends AppCompatActivity {
     private Button buttonSave;
     private DatabaseHelper databaseHelper;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +119,7 @@ public class SongDetailsActivity extends AppCompatActivity {
         Cursor cursor = databaseHelper.getAllFavorites();
         if (cursor != null && cursor.moveToFirst()) {
             do {
-                String savedArtistName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_ARTIST_NAME));
+                @SuppressLint("Range") String savedArtistName = cursor.getString(cursor.getColumnIndex(DatabaseHelper.COLUMN_ARTIST_NAME));
                 if (artistName.equals(savedArtistName)) {
                     cursor.close();
                     return true;
