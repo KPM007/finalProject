@@ -1,4 +1,4 @@
-package algonquin.cst2335.recipesearchapi;
+package algonquin.cst2355.finalproject;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
+import algonquin.cst2335.recipesearchapi.R;
 import algonquin.cst2355.finalproject.Recipe;
+import algonquin.cst2355.finalproject.RecipeSearch;
 import algonquin.cst2355.finalproject.RecipeDetailsActivity;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
@@ -39,7 +41,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 .load(recipe.getImageUrl())
                 .into(holder.image);
         holder.itemView.setOnClickListener(v -> {
-            if(context instanceof algonquin.cst2335.recipesearchapi.MainActivity) {
+            if(context instanceof RecipeSearch) {
                 Intent detailIntent = new Intent(context, RecipeDetailsActivity.class);
                 detailIntent.putExtra("title", recipe.getTitle());
                 detailIntent.putExtra("imageUrl", recipe.getImageUrl());
@@ -53,8 +55,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             @Override
             public void onClick(View v) {
                 // Assuming MainActivity has a method fetchRecipeDetails(int recipeId) to fetch details
-                if (context instanceof algonquin.cst2335.recipesearchapi.MainActivity) {
-                    ((algonquin.cst2335.recipesearchapi.MainActivity) context).fetchRecipeDetails(recipe.getId());
+                if (context instanceof RecipeSearch) {
+                    ((RecipeSearch) context).fetchRecipeDetails(recipe.getId());
                 }
             }
         });

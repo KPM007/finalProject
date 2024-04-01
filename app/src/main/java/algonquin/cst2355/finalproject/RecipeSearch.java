@@ -1,4 +1,4 @@
-package algonquin.cst2335.recipesearchapi;
+package algonquin.cst2355.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,14 +16,16 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.VolleyError;
-import algonquin.cst2355.finalproject.RecipeAdapter;
+
+import algonquin.cst2335.recipesearchapi.R;
+import algonquin.cst2355.finalproject.Recipe;
 import algonquin.cst2355.finalproject.Recipe;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class RecipeSearch extends AppCompatActivity {
     private EditText etSearchQuery;
 
     private RecyclerView rvRecipes;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                             int  id     = recipeJson.getInt("id");
                             String title = recipeJson.getString("title");
                             String imageUrl = recipeJson.getString("image"); // Assuming 'image' is the key
-                            recipes.add(new Recipe( title, imageUrl));
+                            recipes.add(new Recipe(id,title, imageUrl));
                         }
                         adapter.notifyDataSetChanged();
                     } catch (Exception e) {
@@ -94,12 +96,12 @@ public class MainActivity extends AppCompatActivity {
 
                         // Update UI with these details
                         // For simplicity, using Toast, but you should update your UI as needed
-                        Toast.makeText(MainActivity.this, "Summary: " + summary, Toast.LENGTH_LONG).show();
+                        Toast.makeText(RecipeSearch.this, "Summary: " + summary, Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(MainActivity.this, "Error fetching recipe details", Toast.LENGTH_SHORT).show());
+                error -> Toast.makeText(RecipeSearch.this, "Error fetching recipe details", Toast.LENGTH_SHORT).show());
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);

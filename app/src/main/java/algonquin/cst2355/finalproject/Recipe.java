@@ -13,7 +13,7 @@ public class Recipe {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    public Recipe(int id,String title, String imageUrl) {
+    public Recipe( int id,String title, String imageUrl) {
         this.title = title;
         this.imageUrl = imageUrl;
     }
