@@ -38,7 +38,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
                 .load(recipe.getImageUrl())
                 .into(holder.image);
         holder.itemView.setOnClickListener(v -> {
-            if(context instanceof MainActivity) {
+            if(context instanceof RecipeSearch) {
                 Intent detailIntent = new Intent(context, RecipeDetailsActivity.class);
                 detailIntent.putExtra("title", recipe.getTitle());
                 detailIntent.putExtra("imageUrl", recipe.getImageUrl());
@@ -52,8 +52,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeView
             @Override
             public void onClick(View v) {
                 // Assuming MainActivity has a method fetchRecipeDetails(int recipeId) to fetch details
-                if (context instanceof MainActivity) {
-                    ((MainActivity) context).fetchRecipeDetails(recipe.getId());
+                if (context instanceof RecipeSearch) {
+                    ((RecipeSearch) context).fetchRecipeDetails(recipe.getId());
                 }
             }
         });
