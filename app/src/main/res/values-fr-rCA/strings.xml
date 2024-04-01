@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">finalProject</string>
+    <string name="enter_latitude">entrez la latitude</string>
+    <string name="enter_longitude">entrez la longitude</string>
+    <string name="lookup">chercher</string>
+    <string name="save_location">enregistrer l\'emplacement</string>
+    <string name="view_favorites">voir les favoris</string>
+    <string name="delete">supprimer</string>
+    <string name="help_title">aide</string>
+    <string name="help_content">ceci est un message d\'aide</string>
+</resources>
