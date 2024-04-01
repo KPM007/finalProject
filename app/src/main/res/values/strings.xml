@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">finalProject</string>
+    <string name="recipe_image">Image</string>
+    <string name="api_key">0cb563b8845f48559da7b3141426a7df</string>
+    <string name="error_fetching_recipe_details">Error fetching recipe details</string>
+    <string name="summary">Summary</string>
+
 </resources>
