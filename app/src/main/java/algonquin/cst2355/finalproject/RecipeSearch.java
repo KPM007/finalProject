@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject;
+package algonquin.cst2335.recipesearchapi;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,16 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.android.volley.toolbox.StringRequest;
-
-import algonquin.cst2335.recipesearchapi.R;
+import com.android.volley.VolleyError;
+import algonquin.cst2355.finalproject.RecipeAdapter;
+import algonquin.cst2355.finalproject.Recipe;
 
 import org.json.JSONObject;
 import org.json.JSONArray;
 import java.util.ArrayList;
 
-public class RecipeSearch extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private EditText etSearchQuery;
 
     private RecyclerView rvRecipes;
@@ -40,15 +42,15 @@ public class RecipeSearch extends AppCompatActivity {
         adapter = new RecipeAdapter(this, recipes);
         rvRecipes.setLayoutManager(new LinearLayoutManager(this));
         rvRecipes.setAdapter(adapter);
-        fetchRecipes();
-        btnSearch.setOnClickListener(new View.OnClickListener() {
+        fetchRecipes(); // Call this method when appropriate, e.g., after a search
+        btnSearch.setOnClickListener(new View.OnClickListener() { // Set the OnClickListener
             @Override
             public void onClick(View v) {
-                fetchRecipes();
+                fetchRecipes(); // Call fetchRecipes when the button is clicked
             }
         });
     }
-
+    // 700cf69419424c40a5412d2fe7d9fe73
     private void fetchRecipes() {
         String query = etSearchQuery.getText().toString().trim();
         String url = "https://api.spoonacular.com/recipes/complexSearch?query=" + query + "&apiKey=0cb563b8845f48559da7b3141426a7df"; // Replace YOUR_API_KEY with your actual API key
@@ -64,7 +66,7 @@ public class RecipeSearch extends AppCompatActivity {
                             int  id     = recipeJson.getInt("id");
                             String title = recipeJson.getString("title");
                             String imageUrl = recipeJson.getString("image"); // Assuming 'image' is the key
-                            recipes.add(new Recipe( id,title, imageUrl));
+                            recipes.add(new Recipe( title, imageUrl));
                         }
                         adapter.notifyDataSetChanged();
                     } catch (Exception e) {
@@ -77,7 +79,7 @@ public class RecipeSearch extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
     public void fetchRecipeDetails(int recipeId) {
-        String apiKey = "0cb563b8845f48559da7b3141426a7df";
+        String apiKey = "0cb563b8845f48559da7b3141426a7df"; // Replace this with your actual API key
         String detailUrl = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=" + apiKey;
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, detailUrl,
@@ -90,13 +92,14 @@ public class RecipeSearch extends AppCompatActivity {
                         String summary = jsonObject.getString("summary");
                         String sourceUrl = jsonObject.getString("spoonacularSourceUrl");
 
-
-                        Toast.makeText(RecipeSearch.this, "Summary: " + summary, Toast.LENGTH_LONG).show();
+                        // Update UI with these details
+                        // For simplicity, using Toast, but you should update your UI as needed
+                        Toast.makeText(MainActivity.this, "Summary: " + summary, Toast.LENGTH_LONG).show();
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(RecipeSearch.this, "Error fetching recipe details", Toast.LENGTH_SHORT).show());
+                error -> Toast.makeText(MainActivity.this, "Error fetching recipe details", Toast.LENGTH_SHORT).show());
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
