@@ -8,4 +8,6 @@
     <string name="delete">Delete</string>
     <string name="help_title">Help</string>
     <string name="help_content">This is a help message.</string>
+    <string name="recipe_image">Image</string>
+    <string name="databaseName">Recipes</string>
 </resources>

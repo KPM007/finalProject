@@ -9,4 +9,5 @@
     <string name="delete">supprimer</string>
     <string name="help_title">aide</string>
     <string name="help_content">ceci est un message d\'aide</string>
+    <string name="recipe_image">hsj</string>
 </resources>

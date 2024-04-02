@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import algonquin.cst2355.finalproject.recipe.RecipeSearch;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_more_apps2) {
             Intent intent = new Intent(this,DeezerSongSearch.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.action_more_apps4) {
+            Intent intent = new Intent(this, RecipeSearch.class);
             startActivity(intent);
             return true;
         }
