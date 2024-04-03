@@ -2,6 +2,7 @@ package algonquin.cst2355.finalproject.recipe;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,12 +32,17 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
     private RecyclerView rvRecipes;
     private ArrayList<Recipe> recipes;
     private RecipeAdapter adapter;
+    private SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_search);
+
+        sharedPreferences = getSharedPreferences(getString(R.string.prefs), MODE_PRIVATE);
+
+        String savedSearchTerm = sharedPreferences.getString(getString(R.string.searchTerm), "");
 
         Button btnSearch = findViewById(R.id.btnSearch);
         etSearchQuery = findViewById(R.id.etSearchQuery);

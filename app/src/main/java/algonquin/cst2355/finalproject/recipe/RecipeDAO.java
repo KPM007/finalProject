@@ -16,4 +16,6 @@ public interface RecipeDAO {
 
     @Query("SELECT * FROM recipe_table")
     List<Recipe> getAllEntries();
+    @Query("DELETE  FROM recipe_table")
+    void delete_All();
 }
