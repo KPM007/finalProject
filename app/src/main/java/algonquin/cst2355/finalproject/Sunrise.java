@@ -59,6 +59,7 @@ public class Sunrise extends AppCompatActivity {
         editTextLng = findViewById(R.id.editTextLng);
         btnLookup = findViewById(R.id.btnLookup);
         btnSave = findViewById(R.id.btnSave);
+
         btnViewFavorites = findViewById(R.id.btnViewFavorites);
         tvResult = findViewById(R.id.tvResult);
         recyclerViewFavorites = findViewById(R.id.recyclerViewFavorites);

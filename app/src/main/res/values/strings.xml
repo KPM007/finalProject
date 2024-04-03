@@ -9,6 +9,7 @@
     <string name="delete">Delete</string>
     <string name="help_title">Help</string>
     <string name="help_content">This is a help message.</string>
+
     <string name="recipe_image">Image</string>
     <string name="databaseName">Recipes</string>
     <string name="title">title</string>
@@ -20,4 +21,7 @@
     <string name="delete_all">Delete All</string>
     <string name="toolbar_message" translatable="false">This is the help message. i am here to help.</string>
     <string name="save_recipe">Save Recipe</string>
+
+    <string name="delete_history">Delete History</string>
+
 </resources>
