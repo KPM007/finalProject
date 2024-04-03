@@ -1,6 +1,8 @@
 package algonquin.cst2355.finalproject.recipe;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,16 +28,22 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeAdapt
         adapter.setOnItemClickListener(this);
         rvSavedRecipes.setLayoutManager(new LinearLayoutManager(this));
         rvSavedRecipes.setAdapter(adapter);
+        Button deleteAllBtn = findViewById(R.id.deleteAllBtn);
+
 
         // Use the singleton instance of the database
         Recipe_database database = Recipe_database.getInstance(getApplicationContext());
         recipeDAO = database.recipeDao();
 
+        deleteAllBtn.setOnClickListener(v -> deleteAllRecipes());
+
         // Load saved recipes from the database
         loadSavedRecipes();
     }
 
-    private void loadSavedRecipes() {
+
+
+        private void loadSavedRecipes() {
         new Thread(() -> {
             List<Recipe> recipes = recipeDAO.getAllEntries();
             runOnUiThread(() -> {
@@ -67,4 +75,22 @@ public class RecipeListActivity extends AppCompatActivity implements RecipeAdapt
             });
         }).start();
     }
+    private void deleteAllRecipes() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete All Recipes")
+                .setMessage("Are you sure you want to delete all recipes?")
+                .setPositiveButton("Delete", (dialog, which) -> {
+                    new Thread(() -> {
+                        recipeDAO.delete_All();
+                        runOnUiThread(() -> {
+                            savedRecipes.clear();
+                            adapter.notifyDataSetChanged();
+                            Toast.makeText(this, "All recipes deleted", Toast.LENGTH_SHORT).show();
+                        });
+                    }).start();
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .show();
+    }
+
 }

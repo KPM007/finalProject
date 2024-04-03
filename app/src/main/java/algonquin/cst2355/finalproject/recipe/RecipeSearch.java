@@ -1,15 +1,20 @@
 package algonquin.cst2355.finalproject.recipe;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -53,6 +58,9 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
         adapter = new RecipeAdapter(this, recipes);
         rvRecipes.setLayoutManager(new LinearLayoutManager(this));
         rvRecipes.setAdapter(adapter);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         adapter.setOnItemClickListener(recipeId -> {
             Intent intent = new Intent(RecipeSearch.this, RecipeDetailsActivity.class);
@@ -109,6 +117,38 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
 
     private void showSnackbarMessage(String message) {
         Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.help) {
+            // Build and show the alert dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Help");
+            builder.setMessage("This is the help message. i am here to help.");
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Dismiss the dialog when the "OK" button is clicked
+                    dialog.dismiss();
+                }
+            });
+
+            // Create and show the dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.recepe_menu, menu);
+        return true;
     }
 }
 

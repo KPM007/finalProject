@@ -18,5 +18,7 @@
         android:title="Dictionary"
         android:icon="@drawable/toolbar"
         android:showAsAction="ifRoom"/>
+
+
     <!-- Add any additional items here -->
 </menu>
