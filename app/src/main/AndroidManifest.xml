@@ -17,6 +17,7 @@
 
         <!-- MainActivity as the launcher activity -->
         <activity
+
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -33,6 +34,7 @@
         <activity android:name=".Sunrise" android:exported="true"/>
         <activity android:name=".Dictionary" android:exported="true"/>
         <activity android:name=".ViewSavedSearchesActivity" android:exported="true"/>
+
     </application>
 
 </manifest>

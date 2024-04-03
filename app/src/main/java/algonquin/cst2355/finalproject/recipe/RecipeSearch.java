@@ -32,6 +32,7 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
     private ArrayList<Recipe> recipes;
     private RecipeAdapter adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
         Button btnSearch = findViewById(R.id.btnSearch);
         etSearchQuery = findViewById(R.id.etSearchQuery);
         rvRecipes = findViewById(R.id.rvRecipes);
+        Button btnsave=findViewById(R.id.btnViewSavedRecipes);
 
         recipes = new ArrayList<>();
         adapter = new RecipeAdapter(this, recipes);
@@ -51,8 +53,14 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
             intent.putExtra("recipeId", recipeId);
             startActivity(intent);
         });
-
         btnSearch.setOnClickListener(v -> fetchRecipes());
+
+        btnsave.setOnClickListener(clk -> {
+            Intent intent = new Intent(RecipeSearch.this, RecipeListActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 
     public void fetchRecipes() {
@@ -97,3 +105,10 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
         Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_SHORT).show();
     }
 }
+
+//    Button searchRecipeButton = findViewById(R.id.btnSaveRecipe);
+//        searchRecipeButton.setOnClickListener(new View.OnClickListener(){
+//@Override
+//public void onClick(View v) {
+//        sa
+//        }

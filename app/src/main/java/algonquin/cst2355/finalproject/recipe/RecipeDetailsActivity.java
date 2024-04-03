@@ -2,6 +2,8 @@ package algonquin.cst2355.finalproject.recipe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,8 @@ public class RecipeDetailsActivity extends AppCompatActivity {
 
     private RecipeDAO rDAO;
     private ArrayList<Recipe> RecipeList = new ArrayList<>();
+    private Button button;
+    private  Recipe recipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,11 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Invalid Recipe ID", Toast.LENGTH_LONG).show();
         }
+           Button searchRecipeButton = findViewById(R.id.btnSaveRecipe);
+           searchRecipeButton.setOnClickListener(clk -> {
+               saveRecipeToDatabase(recipe);
+           });
+
     }
 
 
@@ -96,8 +105,7 @@ public class RecipeDetailsActivity extends AppCompatActivity {
                         textViewSummary.setText(summary);
                         textViewSourceUrl.setText(sourceUrl);
 
-                        Recipe recipe = new Recipe(id, title, imageUrl, summary, sourceUrl);
-                        saveRecipeToDatabase(recipe);
+                        recipe = new Recipe(id, title, imageUrl, summary, sourceUrl);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -118,14 +126,14 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         return android.text.Html.fromHtml(html).toString();
     }
     private void saveRecipeToDatabase(Recipe recipe) {
-        // Initialize Room database
-        Recipe_database database = Room.databaseBuilder(getApplicationContext(),
-                Recipe_database.class, "recipe-database").build();
-
-        // Insert recipe into database using DAO
-        new Thread(() -> {
-            database.recipeDao().insert(recipe);
+        Executor executor = Executors.newSingleThreadExecutor();
+        executor.execute(() -> {
+            Recipe_database db = Recipe_database.getInstance(getApplicationContext());
+            db.recipeDao().insert(recipe);
+            // Update UI on the main thread if necessary
             runOnUiThread(() -> Toast.makeText(this, "Recipe saved to database", Toast.LENGTH_SHORT).show());
-        }).start();
+        });
     }
+
 }
+
