@@ -9,4 +9,14 @@
     <string name="delete">supprimer</string>
     <string name="help_title">aide</string>
     <string name="help_content">ceci est un message d\'aide</string>
+    <string name="recipe_image">hsj</string>
+    <string name="databaseName">jd</string>
+    <string name="title">shbcjn</string>
+    <string name="error">rbgf</string>
+    <string name="apiKey">gvbhnj</string>
+    <string name="invalid_recipe">fgbhj</string>
+    <string name="prefs">vghbjn</string>
+    <string name="searchTerm">vgy</string>
+    <string name="delete_all">vbu</string>
+    <string name="save_recipe">Save Recipe</string>
 </resources>
