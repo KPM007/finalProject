@@ -8,4 +8,5 @@
     <string name="delete">Delete</string>
     <string name="help_title">Help</string>
     <string name="help_content">This is a help message.</string>
+    <string name="delete_history">Delete History</string>
 </resources>
