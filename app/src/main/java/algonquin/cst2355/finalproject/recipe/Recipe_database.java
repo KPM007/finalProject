@@ -10,7 +10,8 @@ import algonquin.cst2355.finalproject.recipe.Recipe;
 import algonquin.cst2355.finalproject.recipe.RecipeDAO;
 
 @Database(entities = {Recipe.class}, version = 1)
-public abstract class Recipe_database extends RoomDatabase {
+public abstract class
+Recipe_database extends RoomDatabase {
     private static volatile Recipe_database instance;
 
     public abstract RecipeDAO recipeDao();

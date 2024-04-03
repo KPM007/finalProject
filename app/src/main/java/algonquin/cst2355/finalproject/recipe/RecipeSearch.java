@@ -45,14 +45,16 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_search);
 
-        sharedPreferences = getSharedPreferences(getString(R.string.prefs), MODE_PRIVATE);
-
-        String savedSearchTerm = sharedPreferences.getString(getString(R.string.searchTerm), "");
-
         Button btnSearch = findViewById(R.id.btnSearch);
         etSearchQuery = findViewById(R.id.etSearchQuery);
         rvRecipes = findViewById(R.id.rvRecipes);
         Button btnsave=findViewById(R.id.btnViewSavedRecipes);
+        EditText etSearchQuery = findViewById(R.id.etSearchQuery);
+
+        sharedPreferences = getSharedPreferences(getString(R.string.prefs), MODE_PRIVATE);
+
+        String savedSearchRecipe = sharedPreferences.getString(getString(R.string.searchTerm), "");
+        etSearchQuery.setText(savedSearchRecipe);
 
         recipes = new ArrayList<>();
         adapter = new RecipeAdapter(this, recipes);
@@ -92,6 +94,7 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
                             String title = recipeJson.getString("title");
                             String imageUrl = recipeJson.getString("image");
                             recipes.add(new Recipe(id, title, imageUrl));
+                            sharedPreferences.edit().putString(getString(R.string.searchTerm), query).apply();
                         }
                         adapter.notifyDataSetChanged();
                     } catch (Exception e) {
@@ -127,7 +130,7 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
             // Build and show the alert dialog
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Help");
-            builder.setMessage("This is the help message. i am here to help.");
+            builder.setMessage(R.string.toolbar_message);
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -152,9 +155,3 @@ public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnI
     }
 }
 
-//    Button searchRecipeButton = findViewById(R.id.btnSaveRecipe);
-//        searchRecipeButton.setOnClickListener(new View.OnClickListener(){
-//@Override
-//public void onClick(View v) {
-//        sa
-//        }
