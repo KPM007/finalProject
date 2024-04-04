@@ -14,12 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
-        <activity android:name=".Recipe.RecipeListActivity"/>
 
         <activity android:name=".recipe.RecipeListActivity"/>
 
         <!-- MainActivity as the launcher activity -->
-        <activity
+
 
 
 

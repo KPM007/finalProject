@@ -23,23 +23,5 @@
         <string name="toolbar_message">This is the help message. i am here to help.</string>
         <string name="save_recipe">Save Recipe</string>
 
-    <string name="enter_latitude">entrez la latitude</string>
-    <string name="enter_longitude">entrez la longitude</string>
-    <string name="lookup">chercher</string>
-    <string name="save_location">enregistrer l\'emplacement</string>
-    <string name="view_favorites">voir les favoris</string>
-    <string name="delete">supprimer</string>
-    <string name="help_title">aide</string>
-    <string name="help_content">ceci est un message d\'aide</string>
-    <string name="recipe_image">hsj</string>
-    <string name="databaseName">jd</string>
-    <string name="title">shbcjn</string>
-    <string name="error">rbgf</string>
-    <string name="apiKey">gvbhnj</string>
-    <string name="invalid_recipe">fgbhj</string>
-    <string name="prefs">vghbjn</string>
-    <string name="searchTerm">vgy</string>
-    <string name="delete_all">vbu</string>
-    <string name="save_recipe">Save Recipe</string>
 </resources>
 

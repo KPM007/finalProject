@@ -9,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-import algonquin.cst2355.finalproject.Recipe.RecipeSearch;
+import java.util.Dictionary;
+
+import algonquin.cst2355.finalproject.recipe.RecipeSearch;
 
 import algonquin.cst2355.finalproject.recipe.RecipeSearch;
 
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_more_apps3) {
-            Intent intent = new Intent(this,Dictionary.class);
+            Intent intent = new Intent(this, Dictionary.class);
             startActivity(intent);
             return true;
         }
