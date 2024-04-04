@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">finalProject</string>
+
     <string name="enter_latitude">Enter Latitude</string>
     <string name="enter_longitude">Enter Longitude</string>
     <string name="lookup">Lookup</string>
@@ -11,14 +12,34 @@
     <string name="help_content">This is a help message.</string>
     <string name="delete_history">Delete History</string>
     <string name="recipe_image">Image</string>
-    <string name="databaseName">Recipes</string>
-    <string name="title">title</string>
-    <string name="apiKey">0cb563b8845f48559da7b3141426a7df</string>
-    <string name="error">Error fetching recipe details</string>
-    <string name="invalid_recipe">Invalid Recipe ID</string>
-    <string name="prefs">MyPrefs</string>
-    <string name="searchTerm">searchTerm\n</string>
-    <string name="delete_all">Delete All</string>
-    <string name="toolbar_message" translatable="false">This is the help message. i am here to</string>
+        <string name="databaseName">Recipes</string>
+        <string name="title">title</string>
+        <string name="apiKey">0cb563b8845f48559da7b3141426a7df</string>
+        <string name="error">Error fetching recipe details</string>
+        <string name="invalid_recipe">Invalid Recipe ID</string>
+        <string name="prefs">MyPrefs</string>
+        <string name="searchTerm">searchTerm\n</string>
+        <string name="delete_all">Delete All</string>
+        <string name="toolbar_message">This is the help message. i am here to help.</string>
+        <string name="save_recipe">Save Recipe</string>
+
+    <string name="enter_latitude">entrez la latitude</string>
+    <string name="enter_longitude">entrez la longitude</string>
+    <string name="lookup">chercher</string>
+    <string name="save_location">enregistrer l\'emplacement</string>
+    <string name="view_favorites">voir les favoris</string>
+    <string name="delete">supprimer</string>
+    <string name="help_title">aide</string>
+    <string name="help_content">ceci est un message d\'aide</string>
+    <string name="recipe_image">hsj</string>
+    <string name="databaseName">jd</string>
+    <string name="title">shbcjn</string>
+    <string name="error">rbgf</string>
+    <string name="apiKey">gvbhnj</string>
+    <string name="invalid_recipe">fgbhj</string>
+    <string name="prefs">vghbjn</string>
+    <string name="searchTerm">vgy</string>
+    <string name="delete_all">vbu</string>
     <string name="save_recipe">Save Recipe</string>
 </resources>
+
