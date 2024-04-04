@@ -12,6 +12,8 @@
 
     <string name="recipe_image">Image</string>
     <string name="databaseName">Recipes</string>
+
+
     <string name="title">title</string>
     <string name="apiKey">0cb563b8845f48559da7b3141426a7df</string>
     <string name="error">Error fetching recipe details</string>
