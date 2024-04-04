@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject.recipe;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.os.Bundle;
 import android.view.Menu;

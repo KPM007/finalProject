@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject.recipe;
+package algonquin.cst2355.finalproject.Recipe;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
