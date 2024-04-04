@@ -50,7 +50,7 @@ val roomVersion = "2.4.0" // Updated to use a single, consistent version of Room
 val volleyVersion = "1.2.1" // Using the latest mentioned version
 
 dependencies {
-    // AndroidX
+    //noinspection GradleCompatible
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -59,8 +59,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
 
     // Room
-    implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    implementation ("androidx.room:room-runtime:2.4.0")
+    annotationProcessor ("androidx.room:room-compiler:2.4.0")
     implementation("androidx.room:room-common:$roomVersion")
 
     // Volley
@@ -68,6 +68,7 @@ dependencies {
 
     // Gson
     implementation("com.google.code.gson:gson:2.8.6")
+
 
     // Image Loading Libraries
     implementation("com.squareup.picasso:picasso:2.71828")
