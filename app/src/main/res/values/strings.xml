@@ -19,7 +19,13 @@
     <string name="prefs">MyPrefs</string>
     <string name="searchTerm">searchTerm\n</string>
     <string name="delete_all">Delete All</string>
-    <string name="toolbar_message" translatable="false">This is the help message. i am here to help.</string>
+    <string name="toolbar_message" translatable="false">Help: Recipe Search \n\n
+1.) Search: Enter keywords in the search bar and tap "Search" to find recipes. \n
+2.) View Details: Click on a recipe to see its ingredients and instructions. \n
+3.) Save Favorites: Tap "Save" to bookmark recipes for later viewing. \n
+4.) Explore Categories: Browse curated categories for inspiration. \n
+5.) Get Help: Tap the menu icon and select "Help" for assistance. \n
+6.) Feedback: We welcome your feedback! Contact us for support or suggestions.</string>
     <string name="save_recipe">Save Recipe</string>
 
     <string name="delete_history">Delete History</string>
