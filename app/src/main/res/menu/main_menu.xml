@@ -15,10 +15,6 @@
         android:icon="@drawable/toolbar"
         android:showAsAction="ifRoom"/>
 
-    <item android:id="@+id/action_more_apps3"
-        android:title="Dictionary"
-        android:icon="@drawable/toolbar"
-        android:showAsAction="ifRoom"/>
 
 
 
