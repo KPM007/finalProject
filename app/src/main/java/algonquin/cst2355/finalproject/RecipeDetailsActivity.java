@@ -1,8 +1,7 @@
-package algonquin.cst2355.finalproject.Recipe;
+package algonquin.cst2355.finalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,20 +11,14 @@ import androidx.room.Room;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-
-import algonquin.cst2355.finalproject.R;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     private TextView textViewRecipeTitle, textViewSummary, textViewSourceUrl;
@@ -74,10 +67,10 @@ public class RecipeDetailsActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Invalid Recipe ID", Toast.LENGTH_LONG).show();
         }
-        Button searchRecipeButton = findViewById(R.id.btnSaveRecipe);
-        searchRecipeButton.setOnClickListener(clk -> {
-            saveRecipeToDatabase(recipe);
-        });
+           Button searchRecipeButton = findViewById(R.id.btnSaveRecipe);
+           searchRecipeButton.setOnClickListener(clk -> {
+               saveRecipeToDatabase(recipe);
+           });
 
     }
 
@@ -136,3 +129,4 @@ public class RecipeDetailsActivity extends AppCompatActivity {
     }
 
 }
+

@@ -1,13 +1,10 @@
-package algonquin.cst2355.finalproject.Recipe;
+package algonquin.cst2355.finalproject;
 
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
-import algonquin.cst2355.finalproject.Recipe.Recipe;
-import algonquin.cst2355.finalproject.Recipe.RecipeDAO;
 
 @Database(entities = {Recipe.class}, version = 1)
 public abstract class

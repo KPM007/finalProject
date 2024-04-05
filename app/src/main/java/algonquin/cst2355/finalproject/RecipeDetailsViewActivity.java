@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject.Recipe;
+package algonquin.cst2355.finalproject;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;

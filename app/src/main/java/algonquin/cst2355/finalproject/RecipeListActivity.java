@@ -1,7 +1,6 @@
-package algonquin.cst2355.finalproject.Recipe;
+package algonquin.cst2355.finalproject;
 
 import android.os.Bundle;
-import android.view.Menu;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
@@ -10,7 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
-import algonquin.cst2355.finalproject.R;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeAdapter.OnItemClickListener {
     private RecyclerView rvSavedRecipes;

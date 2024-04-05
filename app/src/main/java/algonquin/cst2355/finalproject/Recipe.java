@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject.Recipe;
+package algonquin.cst2355.finalproject;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "recipe_table")
 public class Recipe {
-    @ColumnInfo(name = "title")
+@ColumnInfo(name = "title")
     private String title;
     private String imageUrl;
     @ColumnInfo(name = "summary")
@@ -16,7 +16,7 @@ public class Recipe {
     private String sourceUrl;
     @PrimaryKey(autoGenerate = true)
     private int id;
-    @Ignore
+@Ignore
     public Recipe( int id,String title, String imageUrl , String summary ,String sourceUrl) {
         this.id=id;
         this.title = title;
@@ -50,3 +50,4 @@ public class Recipe {
     public void setSourceUrl
             (String sourceUrl) { this.sourceUrl = sourceUrl; }
 }
+

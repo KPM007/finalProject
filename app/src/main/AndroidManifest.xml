@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
-        <activity android:name=".Recipe.RecipeListActivity"/>
+        <activity android:name=".RecipeListActivity"/>
 
 
 
@@ -43,8 +43,8 @@
         <activity android:name=".Sunrise" android:exported="true"/>
         <activity android:name=".ViewSavedSearchesActivity" android:exported="true"/>
 
-        <activity android:name=".Recipe.RecipeSearch" android:exported="true"/>
-        <activity android:name=".Recipe.RecipeDetailsActivity" android:exported="true"/>
+        <activity android:name=".RecipeSearch" android:exported="true"/>
+        <activity android:name=".RecipeDetailsActivity" android:exported="true"/>
 
     </application>
 
