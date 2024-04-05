@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
+
+
 import java.util.ArrayList;
 
 import algonquin.cst2355.finalproject.R;
