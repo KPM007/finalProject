@@ -26,9 +26,9 @@
         </activity>
 
         <!-- Additional activities with explicit export declaration -->
-        <activity android:name=".recipe.RecipeListActivity" android:exported="true"/>
-        <activity android:name=".recipe.RecipeSearch" android:exported="true"/>
-        <activity android:name=".recipe.RecipeDetailsActivity" android:exported="true"/>
+        <activity android:name=".Recipe.RecipeListActivity" android:exported="true"/>
+        <activity android:name=".Recipe.RecipeSearch" android:exported="true"/>
+        <activity android:name=".Recipe.RecipeDetailsActivity" android:exported="true"/>
         <activity android:name=".SongDetailsActivity" android:exported="true"/>
         <activity android:name=".DeezerSongSearch" android:exported="true"/>
         <activity android:name=".Sunrise" android:exported="true"/>
