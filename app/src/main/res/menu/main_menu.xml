@@ -6,11 +6,23 @@
 
     <item android:id="@+id/action_more_apps2"
         android:title="DeezerSongSearch"
-        android:icon="@drawable/ic_more_apps"
+        android:icon="@drawable/toolbar"
+
         android:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_more_apps4"
+        android:title="RecipeSearch"
+        android:icon="@drawable/toolbar"
+
+        android:showAsAction="ifRoom"/>
+
+
 
     <item android:id="@+id/action_more_apps3"
         android:title="Dictionary"
+        android:icon="@drawable/toolbar"
         android:showAsAction="ifRoom"/>
+
+
     <!-- Add any additional items here -->
 </menu>

@@ -8,6 +8,14 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+
+import java.util.Dictionary;
+
+import algonquin.cst2355.finalproject.Recipe.RecipeSearch;
+
+
+
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -42,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.action_more_apps3) {
-            Intent intent = new Intent(this,Dictionary.class);
+            Intent intent = new Intent(this, Dictionary.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.action_more_apps4) {
+            Intent intent = new Intent(this, RecipeSearch.class);
             startActivity(intent);
             return true;
         }

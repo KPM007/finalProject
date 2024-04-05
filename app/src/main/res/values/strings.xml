@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">finalProject</string>
     <string name="enter_latitude">Enter Latitude</string>
@@ -8,4 +9,30 @@
     <string name="delete">Delete</string>
     <string name="help_title">Help</string>
     <string name="help_content">This is a help message.</string>
-</resources>
+
+    <string name="recipe_image">Image</string>
+    <string name="databaseName">Recipes</string>
+    <string name="title">title</string>
+    <string name="apiKey">0cb563b8845f48559da7b3141426a7df</string>
+    <string name="error">Error fetching recipe details</string>
+    <string name="invalid_recipe">Invalid Recipe ID</string>
+    <string name="prefs">MyPrefs</string>
+    <string name="searchTerm">searchTerm\n</string>
+    <string name="delete_all">Delete All</string>
+    <string name="toolbar_message" translatable="false">Help: Recipe Search \n\n
+1.) Search: Enter keywords in the search bar and tap "Search" to find recipes. \n
+2.) View Details: Click on a recipe to see its ingredients and instructions. \n
+3.) Save Favorites: Tap "Save" to bookmark recipes for later viewing. \n
+4.) Explore Categories: Browse curated categories for inspiration. \n
+5.) Get Help: Tap the menu icon and select "Help" for assistance. \n
+6.) Feedback: We welcome your feedback! Contact us for support or suggestions.</string>
+    <string name="save_recipe">Save Recipe</string>
+
+    <string name="delete_history">Delete History</string>
+
+
+    </resources>
+
+
+
+
