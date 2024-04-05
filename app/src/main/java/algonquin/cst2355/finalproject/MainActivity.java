@@ -10,7 +10,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import java.util.Dictionary;
 
-import algonquin.cst2355.finalproject.recipe.RecipeSearch;
+import algonquin.cst2355.finalproject.Recipe.RecipeSearch;
+;
 
 public class MainActivity extends AppCompatActivity {
     @Override
