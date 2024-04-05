@@ -32,7 +32,8 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
+//author - Krish Patel
+ //student id - 041111873(pate1235)
 public class Sunrise extends AppCompatActivity {
 
     private EditText editTextLat, editTextLng;
