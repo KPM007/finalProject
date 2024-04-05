@@ -36,13 +36,11 @@
 
         <!-- Corrected and simplified other activities declaration -->
 
-        <activity android:name=".recipe.RecipeSearch" android:exported="true"/>
-        <activity android:name=".recipe.RecipeDetailsActivity" android:exported="true"/>
 
+        <activity android:name=".Dictionary" android:exported="true"/>
         <activity android:name=".SongDetailsActivity" android:exported="true"/>
         <activity android:name=".DeezerSongSearch" android:exported="true"/>
         <activity android:name=".Sunrise" android:exported="true"/>
-        <activity android:name=".Dictionary" android:exported="true"/>
         <activity android:name=".ViewSavedSearchesActivity" android:exported="true"/>
 
         <activity android:name=".Recipe.RecipeSearch" android:exported="true"/>
