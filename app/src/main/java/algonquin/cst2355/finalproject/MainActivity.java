@@ -1,17 +1,19 @@
 package algonquin.cst2355.finalproject;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.Dictionary;
+
 import algonquin.cst2355.finalproject.Recipe.RecipeSearch;
+;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
@@ -32,17 +36,17 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_more_apps) {
-            Intent intent = new Intent(this, Sunrise.class);
+            Intent intent = new Intent(this,Sunrise.class);
             startActivity(intent);
             return true;
         }
+
 
         if (id == R.id.action_more_apps2) {
-            Intent intent = new Intent(this, DeezerSongSearch.class);
+            Intent intent = new Intent(this,DeezerSongSearch.class);
             startActivity(intent);
             return true;
         }
-
         if (id == R.id.action_more_apps3) {
             Intent intent = new Intent(this, Dictionary.class);
             startActivity(intent);
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
