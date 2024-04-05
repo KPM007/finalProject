@@ -1,7 +1,6 @@
-package algonquin.cst2355.finalproject.recipe;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,13 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
+
+
 import java.util.ArrayList;
 
 import algonquin.cst2355.finalproject.R;
 
-    public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
+public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
         private ArrayList<Recipe> recipes;
         private Context context;
         private OnItemClickListener listener;

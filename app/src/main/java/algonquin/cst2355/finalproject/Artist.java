@@ -33,6 +33,4 @@ public class Artist implements Serializable {
     }
 
     public String getPictureMedium() {return pictureMedium;}
-
-
 }
