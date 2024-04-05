@@ -26,9 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import algonquin.cst2355.finalproject.R;
-
-public class MainActivity extends AppCompatActivity {
+public class Dictionary extends AppCompatActivity {
     EditText etSearchTerm;
 
     Button btnSearch, btnViewSaved;
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         btnViewSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewSavedSearchesActivity.class);
+                Intent intent = new Intent(Dictionary.this, ViewSavedSearchesActivity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         btnViewSaved.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ViewSavedSearchesActivity.class);
+                Intent intent = new Intent(Dictionary.this, ViewSavedSearchesActivity.class);
                 startActivity(intent);
             }
         });
@@ -111,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
                             });
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(MainActivity.this, "Error parsing the definitions", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Dictionary.this, "Error parsing the definitions", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "Error fetching the definitions", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dictionary.this, "Error fetching the definitions", Toast.LENGTH_SHORT).show();
             }
         });
 
