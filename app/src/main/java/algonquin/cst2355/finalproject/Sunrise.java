@@ -17,13 +17,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,15 +45,13 @@ public class Sunrise extends AppCompatActivity {
     private SQLiteDatabase database;
     private FavoritesAdapter favoritesAdapter;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sunrise);
 
-
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         editTextLat = findViewById(R.id.editTextLat);
         editTextLng = findViewById(R.id.editTextLng);
@@ -68,15 +66,30 @@ public class Sunrise extends AppCompatActivity {
         editTextLat.setText(lastSearchTerm);
 
         btnLookup.setOnClickListener(v -> lookupSunriseSunset());
-
         btnSave.setOnClickListener(v -> saveLocationToFavorites());
-
         btnViewFavorites.setOnClickListener(v -> viewFavorites());
 
         setupDatabase();
         setupRecyclerView();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_help) {
+            showHelpDialog();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     private void setupDatabase() {
         database = openOrCreateDatabase("FavoritesDB", Context.MODE_PRIVATE, null);
@@ -139,6 +152,7 @@ public class Sunrise extends AppCompatActivity {
         Cursor cursor = database.rawQuery("SELECT * FROM favorites", null);
         favoritesAdapter.swapCursor(cursor);
     }
+
     private void showDeleteConfirmationDialog(String lat, String lng) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete");
@@ -153,6 +167,15 @@ public class Sunrise extends AppCompatActivity {
         database.delete("favorites", "lat=? AND lng=?", new String[]{lat, lng});
         Toast.makeText(this, "Location deleted", Toast.LENGTH_SHORT).show();
         viewFavorites(); // Refresh the favorites list
+    }
+
+    private void showHelpDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Help");
+        builder.setMessage("Enter latitude and longitude to lookup sunrise and sunset times. " +
+                "You can save favorite locations and view them later.");
+        builder.setPositiveButton("OK", (dialog, which) -> dialog.dismiss());
+        builder.create().show();
     }
 
     private static class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.ViewHolder> {
@@ -220,31 +243,6 @@ public class Sunrise extends AppCompatActivity {
                 textView = itemView.findViewById(android.R.id.text1);
             }
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.help) {
-            showHelpDialog();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void showHelpDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.help_title));
-        builder.setMessage(getString(R.string.help_content));
-        builder.setPositiveButton("OK", null);
-        AlertDialog dialog = builder.create();
-        dialog.show();
     }
 
     private void lookupSunriseSunset(String selectedLat, String selectedLng) {

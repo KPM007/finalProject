@@ -3,7 +3,7 @@
     <!-- Help menu item -->
     <item
         android:id="@+id/help"
-        android:title="@string/help"
+        android:title="@string/help_title"
         android:showAsAction="ifRoom|withText" />
 
     <!-- You can add more menu items here -->

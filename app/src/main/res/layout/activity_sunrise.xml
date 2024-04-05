@@ -4,21 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Sunrise">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary" />
-
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:titleTextColor="@android:color/white" />
 
     <EditText
         android:id="@+id/editTextLat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Enter Latitude"
-        android:inputType="numberDecimal" />
+        android:layout_below="@id/toolbar"
+    android:layout_margin="16dp"
+    android:hint="Enter Latitude"
+    android:inputType="numberDecimal" />
+
 
     <EditText
         android:id="@+id/editTextLng"
@@ -26,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextLat"
         android:layout_margin="16dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="111dp"
         android:layout_marginBottom="16dp"
         android:hint="Enter Longitude"
         android:inputType="numberDecimal" />
@@ -37,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextLng"
         android:layout_margin="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:layout_marginBottom="16dp"
         android:text="Lookup" />
 
