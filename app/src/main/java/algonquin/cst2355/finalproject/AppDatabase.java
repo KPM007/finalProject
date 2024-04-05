@@ -1,6 +1,5 @@
 package algonquin.cst2355.finalproject;
 
-
 import android.content.Context;
 
 import androidx.room.Database;
@@ -26,6 +25,5 @@ public abstract class AppDatabase extends RoomDatabase {
         return INSTANCE;
     }
 }
-
 
 

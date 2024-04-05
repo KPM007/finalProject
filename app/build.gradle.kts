@@ -34,24 +34,22 @@ dependencies {
 
     // Add this line for Volley
     implementation ("com.android.volley:volley:1.2.1")
-}
+
 val room_version = ("2.6.1")
-dependencies {
+
     implementation ("androidx.room:room-runtime:$room_version")
     annotationProcessor ("androidx.room:room-compiler:$room_version")
-}
+
 
 
 
     // Add this line for Volley
     implementation ("com.android.volley:volley:1.2.1")
-}
-val room_version = ("2.6.1")
-dependencies {
-    implementation ("androidx.room:room-runtime:$room_version")
+
+
+    implementation("androidx.room:room-runtime:$room_version")
     annotationProcessor ("androidx.room:room-compiler:$room_version")
-}
-dependencies {
+    
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

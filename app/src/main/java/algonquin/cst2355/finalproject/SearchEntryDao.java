@@ -1,6 +1,5 @@
 package algonquin.cst2355.finalproject;
 
-
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -8,6 +7,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
+import algonquin.cst2355.finalproject.SearchEntry;
 
 @Dao
 public interface SearchEntryDao {

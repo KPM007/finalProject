@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+import algonquin.cst2355.finalproject.R;
+import algonquin.cst2355.finalproject.AppDatabase;
+import algonquin.cst2355.finalproject.SavedSearchesAdapter;
+import algonquin.cst2355.finalproject.SearchEntry;
 
 public class ViewSavedSearchesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -33,6 +37,7 @@ public class ViewSavedSearchesActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Call a method to delete the search history
                 deleteSearchHistory();
             }
         });
@@ -53,9 +58,11 @@ public class ViewSavedSearchesActivity extends AppCompatActivity {
     }
 
     private void deleteSearchHistory() {
+        // Clear the search history list and notify the adapter
         searchHistory.clear();
         adapter.notifyDataSetChanged();
 
+        // Delete search history from the database
         AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
         new Thread(() -> {
             db.searchEntryDao().deleteAll();

@@ -1,11 +1,4 @@
 <resources>
-    <string name="app_name">finalProject</string>
-    <string name="enter_latitude">Enter Latitude</string>
-    <string name="enter_longitude">Enter Longitude</string>
-    <string name="lookup">Lookup</string>
-    <string name="save_location">Save Location</string>
-    <string name="view_favorites">View Favorites</string>
-    <string name="delete">Delete</string>
-    <string name="help_title">Help</string>
-    <string name="help_content">This is a help message.</string>
+    <string name="app_name">Dictionary</string>
+    <string name="delete_history">Delete History</string>
 </resources>
