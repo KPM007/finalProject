@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -25,6 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import algonquin.cst2355.finalproject.R;
 
 public class RecipeSearch extends AppCompatActivity implements RecipeAdapter.OnItemClickListener {
     private EditText etSearchQuery;

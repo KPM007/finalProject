@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+
+import algonquin.cst2355.finalproject.R;
 
 public class RecipeDetailsActivity extends AppCompatActivity {
     private TextView textViewRecipeTitle, textViewSummary, textViewSourceUrl;

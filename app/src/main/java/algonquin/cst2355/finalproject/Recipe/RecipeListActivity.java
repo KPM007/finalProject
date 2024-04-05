@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,6 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+
+import algonquin.cst2355.finalproject.R;
+import algonquin.cst2355.finalproject.Recipe.Recipe;
+import algonquin.cst2355.finalproject.Recipe.RecipeAdapter;
+import algonquin.cst2355.finalproject.Recipe.RecipeDAO;
+import algonquin.cst2355.finalproject.Recipe.Recipe_database;
 
 public class RecipeListActivity extends AppCompatActivity implements RecipeAdapter.OnItemClickListener {
     private RecyclerView rvSavedRecipes;

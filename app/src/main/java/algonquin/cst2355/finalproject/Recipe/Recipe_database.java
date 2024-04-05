@@ -1,4 +1,4 @@
-package algonquin.cst2355.finalproject;
+package algonquin.cst2355.finalproject.Recipe;
 
 import android.content.Context;
 

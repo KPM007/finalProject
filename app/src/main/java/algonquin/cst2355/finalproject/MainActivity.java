@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import algonquin.cst2355.finalproject.Recipe.RecipeSearch;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
